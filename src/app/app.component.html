@@ -1,7 +1,6 @@
 <div id="container">
 <div id="form-container">
-  <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
-    
+  <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">  
     <div *ngIf="step === 1" class="step">
       <div class="input">
         <div>
@@ -15,7 +14,6 @@
         <div class="btn">
           <button
           type="submit"
-          (click)="nextStepControl()"
           [disabled]="index!==len1-1"
           [ngClass]=" index == len1-1 ? 'enabled-btn' : 'disabled-btn' ">Next</button>
         </div>
@@ -35,8 +33,7 @@
           <button
           [ngClass]=" index == len2-1 ? 'enabled-btn' : 'disabled-btn' "
             type="submit"
-            [disabled]="index!==len2-1"
-            (click)="nextStepControl()" >Next
+            [disabled]="index!==len2-1" >Next
           </button>
         </div>
       </div>
@@ -67,19 +64,19 @@
 <div class="img-container" *ngIf="step==1">
   <img [src]="img_src1[index]"> <br/>
   <div id="btn">
-    <button (focus)="itemControl(i)" [ngStyle]="{'background-color': index>=i?'Green':'Red'}" *ngFor = "let img of img_src1; let i = index">{{i+1}}</button>
+    <button  [ngStyle]="{'background-color': index>=i?'Green':'Red'}" *ngFor = "let img of img_src1; let i = index">{{i+1}}</button>
   </div>
 </div>
 <div class="img-container" *ngIf="step==2">
   <img [src]="img_src2[index]"> <br/>
   <div id="btn">
-    <button (focus)="itemControl(i)" [ngStyle]="{'background-color': index>=i?'Green':'Red'}" *ngFor = "let img of img_src2; let i = index">{{i+1}}</button>
+    <button [ngStyle]="{'background-color': index>=i?'Green':'Red'}" *ngFor = "let img of img_src2; let i = index">{{i+1}}</button>
   </div>
 </div>
 <div class="img-container" *ngIf="step==3">
   <img [src]="img_src3[index]"> <br/>
   <div id="btn">
-    <button (focus)="itemControl(i)" [ngStyle]="{'background-color': index>=i?'Green':'Red'}" *ngFor = "let img of img_src3; let i = index">{{i+1}}</button>
+    <button [ngStyle]="{'background-color': index>=i?'Green':'Red'}" *ngFor = "let img of img_src3; let i = index">{{i+1}}</button>
   </div>
 </div>
     <!-- <input type="file" (change)="onSelectFile($event)"> -->
